@@ -1,0 +1,24 @@
+# A4P Finder에서 보기 — herdr 칸에서 ⌃(Control)+클릭한 파일 링크를 Finder 창에서 선택해 보여 준다 (2026-11-15)
+# 복사·삭제하려고 파일을 Finder에서 찾을 때 쓴다. 바로 열기는 지금처럼 ⌘+⇧+클릭(Ghostty).
+# 링크는 숨은 링크(OSC 8)여야 한다: herdr 칸에서 FORCE_HYPERLINK=1 을 켜고, Claude 가 경로를 [경로](file:///경로) 로 적는다.
+# 읽기 전용 — 파일을 만들거나 고치거나 지우지 않는다(기록 파일만 플러그인 상태 폴더에 남긴다).
+
+id = "a4p-reveal"
+name = "A4P Finder에서 보기"
+version = "0.1.0"
+description = "⌃+클릭한 파일 링크를 Finder 창에서 선택해 보여 줍니다 (복사·삭제하기 쉽게)"
+min_herdr_version = "0.9.0"
+platforms = ["macos"]
+
+[[actions]]
+id = "reveal"
+title = "Finder에서 보기"
+description = "⌃+클릭한 file:// 링크의 파일을 Finder 창에서 선택한다"
+command = ["./reveal.py"]
+
+# herdr 는 ⌃+클릭한 곳이 숨은 링크면 그 주소를 넘겨준다(맥에서도 ⌘ 가 아니라 ⌃).
+[[link_handlers]]
+id = "file-link"
+title = "Finder에서 보기"
+pattern = "^file://"
+action = "reveal"
