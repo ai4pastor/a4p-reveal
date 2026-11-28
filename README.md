@@ -13,7 +13,7 @@ herdr 칸에서 Claude가 알려 준 파일 경로를 **⌃(Control)+클릭**하
 
 ## 작동 조건 — 세 가지가 모두 있어야 합니다
 
-1. **이 플러그인**: 이 폴더에서 `herdr plugin link "$PWD"`
+1. **이 플러그인**: `herdr plugin install ai4pastor/a4p-reveal` (이 폴더에서 직접 고쳐 쓰려면 `herdr plugin link "$PWD"`)
 2. **herdr 칸에서 숨은 링크(OSC 8) 켜기** — `~/.zshrc` 에 한 줄:
 
    ```sh
